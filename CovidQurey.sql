@@ -1,11 +1,11 @@
---1. Global numbers
+--1. Global Covid Case Numbers
 SELECT SUM(new_cases) as New_Total_Cases, SUM(cast(new_deaths as int)) as New_Total_Deaths, SUM(cast(new_deaths as int))/SUM(new_cases)*100 as DeathPercentage
 From CovidProject..CovidDeaths
 where continent is not null
 --Group by Date
 order by 1,2
 
---2. Continent numbers
+--2. Continent Covid Case Numbers
 Select location, SUM(CAST(new_deaths as int)) as TotalDeaths
 From CovidProject..CovidDeaths
 where continent is null
